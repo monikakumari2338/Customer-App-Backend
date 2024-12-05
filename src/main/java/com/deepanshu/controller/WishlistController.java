@@ -2,6 +2,9 @@ package com.deepanshu.controller;
 
 import com.deepanshu.modal.Wishlist;
 import com.deepanshu.service.WishlistService;
+
+import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -16,6 +19,7 @@ import com.deepanshu.service.UserService;
 @RestController
 @RequestMapping("/api/wishlist")
 @CrossOrigin(origins = "https://localhost:8081")
+@SecurityRequirement(name = "bearerAuth")
 public class WishlistController {
 
     private WishlistService wishlistService;
